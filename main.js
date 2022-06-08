@@ -1,14 +1,18 @@
+window.addEventListener('scroll', onScroll)
+
+onScroll()
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
-  }
+}
 
 function showNavOnScroll() {
+  const navigation = document.querySelector('#navigation')
   if (scrollY > 0) {
     navigation.classList.add('scroll')
   } else {
     navigation.classList.remove('scroll')
-}
+  }
 }
 
 function showBackToTopButtonOnScroll() {
@@ -16,7 +20,7 @@ function showBackToTopButtonOnScroll() {
     backToTopButton.classList.add('show')
   } else {
     backToTopButton.classList.remove('show')
-}
+  }
 }
 
 function openMenu() {
@@ -30,14 +34,14 @@ function closeMenu() {
 ScrollReveal({
   origin: 'top',
   distance: '30px',
-  duration: 700,
+  duration: 700
 }).reveal(`
-#home, 
-#home img, 
-#home .stats, 
-#services,
-#services header,
-#services .card
-#about,
-#about header,
-#about .content`);
+  #home, 
+  #home img, 
+  #home .stats, 
+  #services,
+  #services header,
+  #services .card
+  #about, 
+  #about header, 
+  #about .content`)
